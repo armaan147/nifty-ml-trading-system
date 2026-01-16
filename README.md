@@ -11,6 +11,12 @@ directional accuracy.
 
 The entire system is built end-to-end from raw data collection to strategy comparison.
 
+## Installation
+pip install -r requirements.txt
+
+## How to run
+Run notebooks sequentially from the notebooks/ directory.
+Each notebook saves outputs used by downstream analysis.
 
 ## Data Description
 - Instrument: **NIFTY 50 Index**
@@ -125,13 +131,6 @@ This helps identify:
 - Add options/futures data and derived features
 - Experiment with tree-based or sequence models
 - Expand regime analysis with longer historical data
-
-## Installation
-pip install -r requirements.txt
-
-## How to run
-Run notebooks sequentially from the notebooks/ directory.
-Each notebook saves outputs used by downstream analysis.
 
 ## Project Structure
 data/      – datasets and reports
