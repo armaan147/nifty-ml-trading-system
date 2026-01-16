@@ -121,6 +121,13 @@ This helps identify:
 - Regime conditions associated with large moves
 - Strategy sensitivity to rare events
 
+### Feature Enhancements
+Additional derived features such as EMA slopes, rolling return statistics,
+and volatility ratios were introduced as proxies for market dynamics.
+Greeks and IV were not directly computed due to lack of reliable options data,
+but the framework supports their future integration.
+
+
 ## Limitations
 - No options or futures data due to API constraints
 - Limited intraday history
