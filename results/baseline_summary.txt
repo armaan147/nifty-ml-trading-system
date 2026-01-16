@@ -1,0 +1,8 @@
+Baseline Strategy Summary
+
+Strategy: EMA crossover
+Instrument: NIFTY spot
+Timeframe: 5-minute bars
+
+This strategy serves as a reference point for evaluating
+machine learning and regime-based enhancements.

@@ -11,7 +11,6 @@ directional accuracy.
 
 The entire system is built end-to-end from raw data collection to strategy comparison.
 
----
 
 ## Data Description
 - Instrument: **NIFTY 50 Index**
@@ -21,7 +20,6 @@ The entire system is built end-to-end from raw data collection to strategy compa
 
 The emphasis is on **methodology and correctness**, not data volume.
 
----
 
 ## Data Processing Pipeline
 The project follows a clear and reproducible pipeline:
@@ -41,7 +39,6 @@ The project follows a clear and reproducible pipeline:
 
 The final feature dataset is saved and reused across all strategy notebooks.
 
----
 
 ## Baseline Trading Strategy
 A simple **EMA crossover strategy** is used as the baseline.
@@ -54,7 +51,6 @@ A simple **EMA crossover strategy** is used as the baseline.
 This strategy serves as a reference point to evaluate whether ML or regime filters
 actually add value.
 
----
 
 ## Machine Learning Trade Filter
 Rather than predicting price direction directly, ML is framed as a **binary filtering
@@ -67,7 +63,6 @@ problem**:
 - Features: EMA(5), EMA(15), Returns
 - Train/Test Split: Time-ordered (70% / 30%)
 - Class balancing enabled
----
 
 ## Regime Analysis (Rule-Based)
 To reduce over-trading during noisy conditions, a simple regime classification is added:
@@ -82,8 +77,6 @@ Regimes are classified as:
 
 Trades are restricted to trend-consistent regimes only.
 
----
-
 ## HMM-Based Regime Detection
 To align more closely with real-world quantitative approaches, a **Hidden Markov Model
 (HMM)** is used to infer latent market regimes.
@@ -97,8 +90,6 @@ To align more closely with real-world quantitative approaches, a **Hidden Markov
   - Neutral state → Sideways
 
 The HMM regime is then used to **control when EMA trades are allowed**.
-
----
 
 ## Strategy Comparison
 Three strategies are compared on the same dataset:
@@ -115,8 +106,6 @@ The comparison focuses on:
 Rather than maximizing returns, the emphasis is on **understanding how filters change
 strategy behavior**.
 
----
-
 ## Outlier Trade Analysis
 To understand where most gains or losses originate, an outlier analysis is performed on
 trade returns using z-score thresholds.
@@ -125,13 +114,11 @@ This helps identify:
 - Extreme trades
 - Regime conditions associated with large moves
 - Strategy sensitivity to rare events
----
 
 ## Limitations
 - No options or futures data due to API constraints
 - Limited intraday history
 - No transaction cost modeling
----
 
 ## Future Improvements
 - Incorporate volatility-based position sizing
@@ -139,7 +126,20 @@ This helps identify:
 - Experiment with tree-based or sequence models
 - Expand regime analysis with longer historical data
 
----
+## Installation
+pip install -r requirements.txt
+
+## How to run
+Run notebooks sequentially from the notebooks/ directory.
+Each notebook saves outputs used by downstream analysis.
+
+## Project Structure
+data/      – datasets and reports
+notebooks/ – analysis notebooks
+src/       – reusable python modules
+models/    – saved trained models
+results/   – strategy summaries
+plots/     – visual outputs
 
 ## Author
 **Armaan Yadav**

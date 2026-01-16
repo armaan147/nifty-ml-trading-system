@@ -1,0 +1,7 @@
+HMM Strategy Summary
+
+Model: Gaussian Hidden Markov Model
+Number of states: 3
+
+The HMM is used to infer latent market regimes
+and control trade execution.

@@ -1,0 +1,8 @@
+ML Strategy Summary
+
+Model: Logistic Regression
+Features: EMA_5, EMA_15, Returns
+Accuracy: Approximately 50 percent
+
+The model is used as a trade filter rather than
+a price prediction tool.
