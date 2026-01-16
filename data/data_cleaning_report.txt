@@ -1,0 +1,21 @@
+Data Cleaning Summary
+
+The raw intraday NIFTY price data was reviewed and processed before being used for
+feature engineering and strategy analysis.
+
+Steps performed during cleaning:
+
+1. Duplicate rows were checked and removed where found.
+2. Missing values in price columns were handled using forward filling to preserve
+   time continuity.
+3. Rows with invalid or non-numeric price values were identified and dropped.
+4. Timestamp order was verified to ensure correct chronological sequencing.
+5. Basic sanity checks were performed on price fields to ensure no negative or zero
+   prices were present.
+
+After cleaning, the dataset was suitable for feature construction and downstream
+analysis. No aggressive filtering was applied in order to retain as much information
+as possible from the original data.
+
+This cleaning approach was chosen to balance data quality with realism, acknowledging
+the limitations of free intraday data sources.
