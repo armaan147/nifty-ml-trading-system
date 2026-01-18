@@ -1,15 +1,25 @@
 # ML-Assisted Intraday Trading System on NIFTY
 
-## Overview
-This project explores how machine learning and regime analysis can be used to support
-a traditional technical trading strategy in an intraday setting.
+## Project Summary
 
-Instead of trying to “predict the market”, the focus is on building a clean,
-explainable pipeline where ML and regime detection act as filters on a baseline
-strategy. The goal is to understand *when* a strategy should trade rather than *forcing*
-directional accuracy.
+This project presents an end-to-end intraday trading framework built using NIFTY spot data. 
+The focus is on designing a stable and interpretable trading system rather than short-term 
+price prediction.
 
-The entire system is built end-to-end from raw data collection to strategy comparison.
+A reusable data pipeline is used to clean and validate high-frequency market data. 
+Interpretable signals representing trend direction, momentum change, and market stability 
+are constructed and used to define a baseline EMA crossover strategy. While the baseline 
+strategy captures trending phases, it shows instability during sideways markets.
+
+To improve robustness, a machine learning–based trade filtering layer is introduced. 
+The model acts as a decision-support mechanism to selectively allow or skip trades rather 
+than forecast prices. Market regimes are also identified using both rule-based logic and 
+probabilistic methods, enabling regime-aware trade execution.
+
+Results show that layered filtering using machine learning and regime awareness reduces 
+drawdowns and improves overall stability compared to the baseline strategy. Outlier analysis 
+further highlights that a small number of extreme trades contribute disproportionately to 
+gains and losses, reinforcing the importance of contextual filtering.
 
 ## Installation
 pip install -r requirements.txt
